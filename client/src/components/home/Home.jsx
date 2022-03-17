@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllVideogames } from "../../redux/actions";
+import Cards from "../cards/Cards";
 
 function Home() {
     const dispatch = useDispatch();
@@ -8,14 +9,13 @@ function Home() {
     
     useEffect(() => {
         dispatch(getAllVideogames())
-    })
+    }, [])
 
     return(
-        <>
-            <div>
-                
-            </div>
-        </>
+        <div>
+            <div>Hola desde Home</div>
+            <div>{<Cards allVideogames={allVideogames}/>}</div>
+        </div>
         
     )
 }
