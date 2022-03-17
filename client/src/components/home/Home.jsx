@@ -8,10 +8,14 @@ function Home() {
     
     useEffect(() => {
         dispatch(getAllVideogames())
-    },[])
+    })
 
     return(
-        <div>{allVideogames}</div>
+        <>
+            <div>
+                
+            </div>
+        </>
         
     )
 }
