@@ -1,4 +1,6 @@
-import { GET_ALL_VIDEOGAMES } from "../actions";
+import { actions } from "../actions";
+const {GET_ALL_VIDEOGAMES} = actions
+
 
 const initialState = {
     allVideogames: []
