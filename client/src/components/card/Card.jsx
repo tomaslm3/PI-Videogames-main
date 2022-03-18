@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 const Card = ({id, name, image, genres, rating, platforms}) => {
     return(
         <div className="card">
@@ -11,6 +12,9 @@ const Card = ({id, name, image, genres, rating, platforms}) => {
                             )
                         })}
                         </ul>
+                        <Link to={`/detail/${id}`} key={id}>
+                            <h2>Mas info</h2>
+                        </Link>
                         <img src={image} alt='img not found' height={200}/>
 
                     </div>
