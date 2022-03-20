@@ -3,7 +3,7 @@ import { Route, Routes, useLocation } from 'react-router-dom'
 import LandingPage from './components/landingPage/LandingPage.jsx';
 import Home from './components/home/Home';
 import GameDetails from './components/gameDetails/GameDetails';
-import NavBar from './components/navbar/Navbar';
+import NavBar from './components/navBar/Navbar';
 
 function App() {
   let location = useLocation();
