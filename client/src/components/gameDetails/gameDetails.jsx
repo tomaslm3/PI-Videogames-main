@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import {useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import { getVideogameById } from "../../redux/actions/index.js"
 
 function GameDetails() {
@@ -10,15 +10,11 @@ function GameDetails() {
     let {id} = useParams()
     useEffect(() => {
         dispatch(getVideogameById(id));
-    }, [])
-
+    }, [dispatch, id])
 
     return(
         <div>
             <div key={id}>
-                <Link to='/home'>
-                    <button>Inicio</button>
-                </Link>
                 <div>
                     <h1>{name}</h1>
                     <img src={image} alt={name} height={200} />

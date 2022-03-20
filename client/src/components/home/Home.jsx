@@ -9,12 +9,11 @@ function Home() {
     
     useEffect(() => {
         dispatch(getAllVideogames())
-    }, [])
+    }, [dispatch])
 
     return(
         <div>
-            <div>Hola desde Home</div>
-            <div>{<Cards allVideogames={allVideogames}/>}</div>
+            <Cards allVideogames={allVideogames}/>
         </div>
         
     )
