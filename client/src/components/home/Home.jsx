@@ -5,7 +5,11 @@ import Cards from "../cards/Cards";
 
 function Home() {
     const dispatch = useDispatch();
-    const allVideogames = useSelector(state => state.byNameVideogames)
+    const allVideogames = useSelector(state => state.allVideogames)
+    function handleClick(e) {
+        e.preventDefault();
+        dispatch(getAllVideogames());
+    }
     
     useEffect(() => {
         dispatch(getAllVideogames())
@@ -13,7 +17,12 @@ function Home() {
 
     return(
         <div>
+            <div>
+                <button onClick={(e) => handleClick(e)}>Cargar todos los juegos</button>
+            </div>
+            <div>
             <Cards allVideogames={allVideogames}/>
+            </div>
         </div>
         
     )
