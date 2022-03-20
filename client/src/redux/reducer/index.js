@@ -4,6 +4,7 @@ const {GET_ALL_VIDEOGAMES, GET_VIDEOGAMES_BY_NAME, GET_GENRES, GET_VIDEOGAME_BY_
 
 const initialState = {
     allVideogames: [],
+    byNameVideogames: [],
     genres: [],
     videogame: [],
 };
@@ -13,12 +14,13 @@ function rootReducer(state = initialState, action) {
         case GET_ALL_VIDEOGAMES:
             return {
                 ...state,
+                byNameVideogames: action.payload,
                 allVideogames: action.payload
             };
         case GET_VIDEOGAMES_BY_NAME:
             return {
                 ...state,
-                allVideogames: action.payload
+                byNameVideogames: action.payload,
             };
         case GET_GENRES:
             return {
