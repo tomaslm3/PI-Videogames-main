@@ -1,31 +1,28 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { getVideogamesByName } from "../../redux/actions";
+import { Link } from "react-router-dom";
 
 function SearchBar() {
-    const dispatch = useDispatch();
-    const [name, setName] = useState('');
 
+    const [name, setName] = useState('');
     function handleInputName(e) {
         e.preventDefault();
         setName(e.target.value)
     }
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        dispatch(getVideogamesByName(name))
+    function handleClick(e) {
         setName('');
-        e.target.reset();
     }
 
     return(
-        <form onSubmit={e => {handleSubmit(e)}}>
+        <form>
             <input
             type='text'
             value={name}
             onChange={e => handleInputName(e)}>
             </input>
-            <button>Buscar</button>
+            <Link to={`/search/${name}`}>
+                <button onClick={e => handleClick(e)}>Buscar</button>    
+            </Link>
         </form>
     )
 }
