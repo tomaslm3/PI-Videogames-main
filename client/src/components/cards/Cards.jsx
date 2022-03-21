@@ -3,7 +3,6 @@ import Card from "../card/Card";
 function Cards({allVideogames}) {
     return(
         <div>
-            <div>Hola desde Cards</div>
             {allVideogames.map(game => {
                 return(
                     <Card
