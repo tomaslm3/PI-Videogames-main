@@ -5,6 +5,7 @@ import Home from './components/home/Home';
 import GameDetails from './components/gameDetails/GameDetails';
 import NavBar from './components/navBar/Navbar';
 import SearchName from './components/searchName/SearchName';
+import NewVideogame from './components/newVideogame/NewVideogame';
 
 function App() {
   let location = useLocation();
@@ -16,6 +17,7 @@ function App() {
             <Route path='/home' element={<Home />}/>
             <Route path='/detail/:id' element={<GameDetails/>} />
             <Route path='/search/:name' element={<SearchName />} />
+            <Route path='/create' element={<NewVideogame />} />
       </Routes>
     </div>
   );
