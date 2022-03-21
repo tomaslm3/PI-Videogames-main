@@ -19,6 +19,11 @@ function NavBar() {
             <div>
                 <SearchBar />
             </div>
+            <div>
+                <Link to='/create'>
+                    <button>Nuevo Juego</button>
+                </Link>
+            </div>
         </>
     )
 }
