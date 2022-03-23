@@ -6,9 +6,11 @@ export const actions = {
     GET_GENRES: 'GET_GENRES',
     GET_VIDEOGAME_BY_ID: 'GET_VIDEOGAME_BY_ID',
     POST_VIDEOGAME: 'POST_VIDEOGAME',
+    FILTER_BY_GENRES: 'FILTER_BY_GENRES',
+    FILTER_CREATED_OR_EXIST: 'FILTER_CREATED_OR_EXIST'
 };
 
-const { GET_ALL_VIDEOGAMES, GET_VIDEOGAMES_BY_NAME, GET_GENRES, GET_VIDEOGAME_BY_ID, POST_VIDEOGAME } = actions;
+const { GET_ALL_VIDEOGAMES, GET_VIDEOGAMES_BY_NAME, GET_GENRES, GET_VIDEOGAME_BY_ID, POST_VIDEOGAME, FILTER_BY_GENRES, FILTER_CREATED_OR_EXIST } = actions;
 
 export function getAllVideogames() {
     return async function(dispatch) {
@@ -79,4 +81,18 @@ export function postVideogame(payload) {
         }
     }
 };
+
+export function filterByGenres(payload) {
+    return {
+        type: FILTER_BY_GENRES,
+        payload: payload
+    }
+};
+
+export function filterByCreatedOrExist(payload){
+    return {
+        type: FILTER_CREATED_OR_EXIST,
+        payload: payload
+    }
+}
 

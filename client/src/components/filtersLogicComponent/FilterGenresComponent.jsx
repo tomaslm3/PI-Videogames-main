@@ -11,10 +11,14 @@ function FilterGenresComponent() {
         dispatch(getGenres())
     }, [dispatch])
 
-
     const [filter, setfilter] = useState({
         genres: []
     })
+    useEffect(() => {
+        searchGenres()
+    }, [filter])
+
+
     
     function handleGenres(e) {
         if( e.target.value !== 'Seleccionar' && !filter.genres.includes(e.target.value)){
@@ -47,9 +51,6 @@ function FilterGenresComponent() {
                                 )
                             })}
                     </select>
-                </div>
-                <div>
-                    <button onClick={searchGenres}>Genres</button>
                 </div>
                 <div>
                     {filter.genres.map((genre) => {

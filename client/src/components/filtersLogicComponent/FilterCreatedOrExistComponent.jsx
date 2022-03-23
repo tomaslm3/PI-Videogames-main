@@ -12,11 +12,10 @@ function FilterCreatedOrExistComponent() {
     }, [createdOrExist])
     
     function handleCreatedOrExist(e) {
-            setCreatedOrExist(e.target.value)
+        setCreatedOrExist(e.target.value)
     }
     function searchCreatedOrExist() {
         dispatch(filterByCreatedOrExist(createdOrExist))
-        console.log(createdOrExist)
     }
     return(
         <div>
