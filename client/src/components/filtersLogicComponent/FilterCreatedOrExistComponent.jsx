@@ -20,7 +20,7 @@ function FilterCreatedOrExistComponent() {
     return(
         <div>
                 <div>
-                    <h3>Generos</h3>
+                    <h3>Originales o creados</h3>
                     <select onChange={e => handleCreatedOrExist(e)}>
                         <option>Seleccionar</option>
                         <option value='string'>Creados</option>
